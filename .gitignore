@@ -22,3 +22,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.idea/
+/pa-academy-kotlin.iml
+/out/production/pa-academy-kotlin/META-INF/pa-academy-kotlin.kotlin_module
+/out/production/untitled/META-INF/untitled.kotlin_module
