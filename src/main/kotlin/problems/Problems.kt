@@ -4,6 +4,8 @@ import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
+typealias MyLambda = (String) -> Unit
+
 fun main() {
 //    println(f167(0))
 //    println(f173(3, 4f, 19f))
@@ -12,8 +14,31 @@ fun main() {
 //    println(f188_1(13))
 //    println(f188_2(8))
 
-    println(131.isPrimeNumber())
-    println(121.isPrimeNumber2())
+//    println(131.isPrimeNumber())
+//    println(121.isPrimeNumber2())
+
+//    println(1358.elementAt(1))
+
+    println(f175(5))
+}
+
+fun Int.elementAt(index: Int): Int {
+    var element: Int
+    var count = 0
+    var size = 0
+    do {
+        val factor = 10.toFloat().pow((size + 1)).toInt()
+        element = this % factor
+        size++
+    } while (element < this)
+    do {
+        val factor1 = 10.toFloat().pow(size - count).toInt()
+        val factor2 = 10.toFloat().pow(size - count - 1).toInt()
+        element = this % factor1 / factor2
+        count++
+    } while (count <= index)
+
+    return element
 }
 
 fun f167(x: Int): Boolean = (1..30)
@@ -32,6 +57,20 @@ fun f173(n: Int, a: Float, b: Float): Float {
     println()
 
     return h
+}
+
+fun f175(n: Int) {
+    var x = 1f
+    val data = mutableListOf<Float>()
+    (1..n).forEach(action = { index ->
+        x = (x + 1) / index
+        data.add(x)
+    })
+    println(data)
+}
+
+fun test(action: MyLambda) {
+    var unit: Unit = action("")
 }
 
 fun f185(p: Int) {
