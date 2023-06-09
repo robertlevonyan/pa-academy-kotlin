@@ -2,9 +2,10 @@ import classes.Request
 
 fun main() {
     val list = listOf(1, 2, 3)
-
+    println(System.currentTimeMillis())
     val swappedList = list.swap(1, 2)
-    println(swappedList)
+//    println(swappedList)
+    println(System.currentTimeMillis())
 
     val newList = list.toMutableList()
     val s = "abc"
@@ -15,12 +16,14 @@ fun main() {
 
     }
     newList.firstElement = 10
+    println(System.currentTimeMillis())
 
-    println(newList)
+//    println(newList)
 
     list.fold2(0) { acc, _ ->
         return@fold2 acc
     }
+    println(System.currentTimeMillis())
 }
 
 fun <T> List<T>.swap(first: Int, second: Int): List<T> {
